@@ -135,7 +135,7 @@
                 // download the recording by creating an anchor element and blob url
                 const url = URL.createObjectURL(recording);
                 const anchor = document.createElement("a");
-                anchor.download = "recording.webm";
+                anchor.download = "recording.mp3";
                 anchor.href = url;
                 anchor.click();
             }, 3000);
