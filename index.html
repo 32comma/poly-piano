@@ -29,6 +29,10 @@
         span:active {
             box-shadow: 0 0 0 0;
         }
+
+        .sharp {
+            display: none;
+        }
     </style>
 </head>
 
@@ -37,6 +41,7 @@
         <span id="key-1" value="0" onclick="run(this)" note="c2">1</span>
         <span id="key-2" value="0" onclick="run(this)" note="d2">2</span>
         <span id="key-3" value="0" onclick="run(this)" note="e2">3</span>
+        <span id="key-4" value="0" onclick="run(this)" note="f2">4</span>
         <span id="key-4" value="0" onclick="run(this)" note="f2">4</span>
         <span id="key-5" value="0" onclick="run(this)" note="g2">5</span>
         <span id="key-6" value="0" onclick="run(this)" note="a2">6</span>
@@ -92,7 +97,7 @@
         const synth = new Tone.PolySynth(Tone.Synth).toDestination().connect(recorder);
         const now = Tone.now();
         document.body.addEventListener('keydown', function (e) {
-            console.log('down');
+
             var key = document.getElementById(`key-${e.key}`);
             if (parseInt(key.getAttribute('value')) == 0) {
                 synth.triggerAttack(`${key.getAttribute('note')}`, now);
