@@ -101,23 +101,13 @@
                 key.style = 'box-shadow: 0 0 0 0;';
             }
         });
-        document.body.addEventListener('keydown', function (e) {
-            console.log('down');
-            var key = document.getElementById(`key-${e.key}`);
-            if (parseInt(key.getAttribute('value')) == 0) {
-                synth.triggerAttack(`${key.getAttribute('note')}`, now);
-                var cnt = parseInt(key.getAttribute('value')) + 1;
-                key.setAttribute('value', cnt);
-                key.style = 'box-shadow: 0 0 0 0;';
-            }
-        });
         document.body.addEventListener('keyup', function (e) {
             console.log('up');
             var key = document.getElementById(`key-${e.key}`);
             key.setAttribute('value', 0);
             key.style = `box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.55)`;
             console.log(key.getAttribute('value'));
-            synth.triggerRelease(`${key.getAttribute('note')}`, now + 0.1);
+            synth.triggerRelease(`${key.getAttribute('note')}`, now + 0.5);
         });
     </script>
     <script>
