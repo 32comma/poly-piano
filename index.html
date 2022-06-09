@@ -10,20 +10,36 @@
 
     </script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+
+        }
+
         span {
             display: inline-block;
             margin: 0.2rem;
-            line-height: 40px;
+            line-height: 20px;
             text-align: center;
             background-color: black;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
             box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.55);
             background-color: none;
             border-radius: 0;
             border: none;
             border-radius: 5px;
+        }
+
+        .row {
+            min-width: 320px;
         }
 
         span:active {
@@ -37,7 +53,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="row">
         <span id="key-1" value="0" onclick="run(this)" note="c2">1</span>
         <span id="key-2" value="0" onclick="run(this)" note="d2">2</span>
         <span id="key-3" value="0" onclick="run(this)" note="e2">3</span>
@@ -50,7 +66,7 @@
         <span id="key-9" value="0" onclick="run(this)" note="d3">9</span>
         <span id="key-0" value="0" onclick="run(this)" note="e3">0</span>
     </div>
-    <div>
+    <div class="row">
         <span id="key-q" value="0" onclick="run(this)" note="f3">q</span>
         <span id="key-w" value="0" onclick="run(this)" note="g3">w</span>
         <span id="key-e" value="0" onclick="run(this)" note="a3">e</span>
@@ -62,7 +78,7 @@
         <span id="key-o" value="0" onclick="run(this)" note="g4">o</span>
         <span id="key-p" value="0" onclick="run(this)" note="a4">p</span>
     </div>
-    <div>
+    <div class="row">
         <span id="key-a" value="0" onclick="run(this)" note="b4">a</span>
         <span id="key-s" value="0" onclick="run(this)" note="c5">s</span>
         <span id="key-d" value="0" onclick="run(this)" note="d5">d</span>
@@ -73,7 +89,7 @@
         <span id="key-k" value="0" onclick="run(this)" note="b5">k</span>
         <span id="key-l" value="0" onclick="run(this)" note="c6">l</span>
     </div>
-    <div>
+    <div class="row">
         <span id="key-z" value="0" onclick="run(this)" note="d6">z</span>
         <span id="key-x" value="0" onclick="run(this)" note="e6">x</span>
         <span id="key-c" value="0" onclick="run(this)" note="f6">c</span>
@@ -83,10 +99,10 @@
         <span id="key-m" value="0" onclick="run(this)" note="c7">m</span>
     </div>
     <span id="record-start" style="background-color:darkred;">
-        녹음
+        R
     </span>
     <span id="record-stop" style="background-color:darkgray">
-        정지
+        S
     </span>
     <script>
         function run(key) {
