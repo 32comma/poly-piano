@@ -91,7 +91,7 @@
     <script>
         function run(key) {
             console.log(key.getAttribute('note'));
-            synth.triggerAttackRelease(`${key.getAttribute('note')}`, '32n');
+            synth.triggerAttackRelease(`${key.getAttribute('note')}`, now);
         }
         const recorder = new Tone.Recorder();
         const synth = new Tone.PolySynth(Tone.Synth).toDestination().connect(recorder);
